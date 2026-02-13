@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Детский сад NurAI</title>
+    <title>NurAI - Детский сад</title>
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
@@ -13,17 +13,22 @@
     <header class="header">
         <div class="container nav-container">
             <a href="#" class="logo">
-                <img src="logo.jpg" alt="NurAI Logo">
+                <img src="./logo_nurai.png" alt="NurAI Logo">
                 <span>NurAI</span>
             </a>
             
             <nav class="navbar">
                 <ul class="nav-menu">
-                    <li><a href="#hero" class="nav-link">Главная</a></li>
-                    <li><a href="#about" class="nav-link">О нас</a></li>
-                    <li><a href="#staff" class="nav-link">Команда</a></li>
-                    <li><a href="gallery.html" class="nav-link">Галерея</a></li>
-                    <li><a href="#contacts" class="nav-link btn-contact">Контакты</a></li>
+                    <li><a href="#hero" class="nav-link" data-i18n="nav_home">Главная</a></li>
+                    <li><a href="#about" class="nav-link" data-i18n="nav_about">О нас</a></li>
+                    <li><a href="#staff" class="nav-link" data-i18n="nav_team">Команда</a></li>
+                    <li><a href="gallery.html" class="nav-link" data-i18n="nav_gallery">Галерея</a></li>
+                    <li><a href="#contacts" class="nav-link btn-contact" data-i18n="nav_contact">Контакты</a></li>
+                    
+                    <div class="lang-switcher">
+                        <button class="lang-btn active" onclick="changeLanguage('ru')">RU</button>
+                        <button class="lang-btn" onclick="changeLanguage('kz')">KZ</button>
+                    </div>
                 </ul>
                 <div class="hamburger">
                     <span class="bar"></span>
@@ -40,7 +45,6 @@
             <div class="slide" style="background-image: url('https://images.unsplash.com/photo-1587654780291-39c9404d746b?auto=format&fit=crop&w=1920&q=80');"></div>
             <div class="slide" style="background-image: url('https://images.unsplash.com/photo-1560785496-ad09b83528b3?auto=format&fit=crop&w=1920&q=80');"></div>
         </div>
-
         <div class="hero-overlay-gradient"></div>
 
         <div class="container hero-container-flex">
@@ -55,60 +59,105 @@
                     </div>
                 </div>
 
-                <h1>Добро пожаловать в <br><span class="highlight-text">NurAI</span></h1>
-                <p>Место, где живет счастливое детство</p>
-                <a href="gallery.html" class="btn btn-primary">Смотреть фото</a>
+                <h1><span data-i18n="hero_welcome">Добро пожаловать в</span> <br><span class="highlight-text">NurAI</span></h1>
+                <p data-i18n="hero_subtitle">Место, где живет счастливое детство</p>
+                <a href="gallery.html" class="btn btn-primary" data-i18n="hero_btn">Смотреть фото</a>
             </div>
         </div>
     </section>
+    <section id="news" class="section bg-white news-section">
+        <div class="container">
+            <div class="section-header-flex">
+                <h2 class="section-title" data-i18n="news_title">Последние события</h2>
+                <a href="#" class="all-news-link" data-i18n="news_all">Все новости <i class="fas fa-arrow-right"></i></a>
+            </div>
 
+            <div class="news-grid">
+                <article class="news-card">
+                    <div class="news-image">
+                        <img src="https://images.unsplash.com/photo-1560785496-ad09b83528b3?auto=format&fit=crop&w=600&q=80" alt="Утренник">
+                        <div class="news-date">
+                            <span class="day">12</span>
+                            <span class="month" data-i18n="month_may">Май</span>
+                        </div>
+                    </div>
+                    <div class="news-content">
+                        <h3 data-i18n="news_1_title">Весенний утренник</h3>
+                        <p data-i18n="news_1_desc">Праздник весны прошел ярко! Дети пели песни и танцевали.</p>
+                        <a href="#" class="read-more" data-id="1" data-i18n="read_more">Подробнее</a>
+                    </div>
+                </article>
+
+                <article class="news-card">
+                    <div class="news-image">
+                        <img src="https://images.unsplash.com/photo-1606092195730-5d7b9af1ef4d?auto=format&fit=crop&w=600&q=80" alt="Меню">
+                        <div class="news-date">
+                            <span class="day">05</span>
+                            <span class="month" data-i18n="month_apr">Апр</span>
+                        </div>
+                    </div>
+                    <div class="news-content">
+                        <h3 data-i18n="news_2_title">Обновление меню</h3>
+                        <p data-i18n="news_2_desc">Добавили больше фруктов и полезных смузи в рацион.</p>
+                        <a href="#" class="read-more" data-id="2" data-i18n="read_more">Подробнее</a>
+                    </div>
+                </article>
+
+                <article class="news-card">
+                    <div class="news-image">
+                        <img src="https://images.unsplash.com/photo-1503454537195-1dcabb73ffb9?auto=format&fit=crop&w=600&q=80" alt="Экскурсия">
+                        <div class="news-date">
+                            <span class="day">28</span>
+                            <span class="month" data-i18n="month_mar">Мар</span>
+                        </div>
+                    </div>
+                    <div class="news-content">
+                        <h3 data-i18n="news_3_title">Поход в зоопарк</h3>
+                        <p data-i18n="news_3_desc">Старшая группа посетила городской зоопарк.</p>
+                        <a href="#" class="read-more" data-id="3" data-i18n="read_more">Подробнее</a>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
     <section id="about" class="section section-with-wave bg-cream">
         <div class="container about-grid">
             <div class="about-text">
-                <h2>О нашем садике</h2>
-                <p><strong>NurAI</strong> — это не просто детский сад, это второй дом для вашего ребенка. Мы создали пространство, где каждый уголок наполнен любовью, заботой и возможностями для развития.</p>
+                <h2  data-i18n="about_title">О нашем детском садике</h2>
+                <p data-i18n="about_desc"><strong>NurAI</strong> — это не просто детский сад, это второй дом для вашего ребенка. Мы создали пространство, где каждый уголок наполнен любовью.</p>
                 <ul class="features-list">
-                    <li><i class="fas fa-star"></i> Индивидуальный подход к каждому малышу</li>
-                    <li><i class="fas fa-palette"></i> Творческие студии и спорт</li>
-                    <li><i class="fas fa-apple-alt"></i> Здоровое 5-разовое питание</li>
+                    <li><i class="fas fa-star"></i> <span data-i18n="about_feat1">Индивидуальный подход к каждому малышу</span></li>
+                    <li><i class="fas fa-palette"></i> <span data-i18n="about_feat2">Творческие студии и спорт</span></li>
+                    <li><i class="fas fa-apple-alt"></i> <span data-i18n="about_feat3">Здоровое 5-разовое питание</span></li>
                 </ul>
             </div>
             <div class="about-image">
-                <img src="https://images.unsplash.com/photo-1544816155-12df9643f363?auto=format&fit=crop&w=800&q=80" alt="Дети играют">
+                <img src="https://images.unsplash.com/photo-1544816155-12df9643f363?auto=format&fit=crop&w=800&q=80" alt="Дети">
             </div>
         </div>
-
         <div class="wave-container">
-            <svg class="wave-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320" preserveAspectRatio="none">
-                <path fill="#ffffff" fill-opacity="1" d="M0,96L48,112C96,128,192,160,288,186.7C384,213,480,235,576,213.3C672,192,768,128,864,122.7C960,117,1056,171,1152,197.3C1248,224,1344,224,1392,224L1440,224L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path>
-            </svg>
+            <svg class="wave-svg" viewBox="0 0 1440 320" preserveAspectRatio="none"><path fill="#ffffff" fill-opacity="1" d="M0,96L48,112C96,128,192,160,288,186.7C384,213,480,235,576,213.3C672,192,768,128,864,122.7C960,117,1056,171,1152,197.3C1248,224,1344,224,1392,224L1440,224L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path></svg>
         </div>
     </section>
 
     <section id="staff" class="section bg-white">
         <div class="container">
-            <h2 class="section-title">Наши воспитатели</h2>
+            <h2 class="section-title" data-i18n="staff_title">Наши воспитатели</h2>
             <div class="staff-grid">
                 <div class="staff-card">
-                    <div class="avatar-wrapper">
-                        <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=crop&w=300&q=80" alt="Воспитатель">
-                    </div>
+                    <div class="avatar-wrapper"><img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=crop&w=300&q=80"></div>
                     <h3>Алина Петрова</h3>
-                    <span class="position">Старший воспитатель</span>
+                    <span class="position" data-i18n="role_teacher">Старший воспитатель</span>
                 </div>
                 <div class="staff-card">
-                    <div class="avatar-wrapper">
-                        <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=300&q=80" alt="Воспитатель">
-                    </div>
+                    <div class="avatar-wrapper"><img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=300&q=80"></div>
                     <h3>Ержан Ахметов</h3>
-                    <span class="position">Тренер по спорту</span>
+                    <span class="position" data-i18n="role_coach">Тренер по спорту</span>
                 </div>
                 <div class="staff-card">
-                    <div class="avatar-wrapper">
-                        <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=300&q=80" alt="Воспитатель">
-                    </div>
+                    <div class="avatar-wrapper"><img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=300&q=80"></div>
                     <h3>Мария Иванова</h3>
-                    <span class="position">Логопед</span>
+                    <span class="position" data-i18n="role_logo">Логопед</span>
                 </div>
             </div>
         </div>
@@ -116,50 +165,45 @@
 
     <section id="offer" class="section section-with-wave bg-cream">
         <div class="container">
-            <h2 class="section-title">Для развития ребенка</h2>
+            <h2 class="section-title" data-i18n="offer_title">Для развития ребенка</h2>
             <div class="offer-grid">
                 <div class="offer-item">
                     <i class="fas fa-paint-brush"></i>
-                    <h4>Арт-студия</h4>
-                    <p>Рисование и лепка каждый день.</p>
+                    <h4 data-i18n="off_1_title">Арт-студия</h4>
+                    <p data-i18n="off_1_desc">Рисование и лепка каждый день.</p>
                 </div>
                 <div class="offer-item">
                     <i class="fas fa-shapes"></i>
-                    <h4>Подготовка к школе</h4>
-                    <p>Математика и логика в игре.</p>
+                    <h4 data-i18n="off_2_title">Подготовка к школе</h4>
+                    <p data-i18n="off_2_desc">Математика и логика в игре.</p>
                 </div>
                 <div class="offer-item">
                     <i class="fas fa-music"></i>
-                    <h4>Музыка</h4>
-                    <p>Пение и танцы.</p>
+                    <h4 data-i18n="off_3_title">Музыка</h4>
+                    <p data-i18n="off_3_desc">Пение и танцы.</p>
                 </div>
                 <div class="offer-item">
                     <i class="fas fa-robot"></i>
-                    <h4>Робототехника</h4>
-                    <p>Инженерия для малышей.</p>
+                    <h4 data-i18n="off_4_title">Робототехника</h4>
+                    <p data-i18n="off_4_desc">Инженерия для малышей.</p>
                 </div>
             </div>
         </div>
-
         <div class="wave-container">
-            <svg class="wave-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320" preserveAspectRatio="none">
-                <path fill="#ffffff" fill-opacity="1" d="M0,224L48,213.3C96,203,192,181,288,181.3C384,181,480,203,576,224C672,245,768,267,864,250.7C960,235,1056,181,1152,165.3C1248,149,1344,171,1392,181.3L1440,192L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path>
-            </svg>
+            <svg class="wave-svg" viewBox="0 0 1440 320" preserveAspectRatio="none"><path fill="#ffffff" fill-opacity="1" d="M0,224L48,213.3C96,203,192,181,288,181.3C384,181,480,203,576,224C672,245,768,267,864,250.7C960,235,1056,181,1152,165.3C1248,149,1344,171,1392,181.3L1440,192L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path></svg>
         </div>
     </section>
 
     <section id="gallery-insta" class="section bg-white">
         <div class="container gallery-wrapper">
             <div class="gallery-block">
-                <h2>Фотогалерея</h2>
+                <h2 data-i18n="gallery_title">Фотогалерея</h2>
                 <div class="mini-gallery-grid">
-                    <a href="gallery.html" class="gallery-item"><img src="https://images.unsplash.com/photo-1502086223501-60051f87b8da?auto=format&fit=crop&w=400&q=80" alt="Фото"></a>
-                    <a href="gallery.html" class="gallery-item"><img src="https://images.unsplash.com/photo-1516627145497-ae6968895b74?auto=format&fit=crop&w=400&q=80" alt="Фото"></a>
-                    <a href="gallery.html" class="gallery-item"><img src="https://images.unsplash.com/photo-1472162072942-cd5147eb3902?auto=format&fit=crop&w=400&q=80" alt="Фото"></a>
-                    <a href="gallery.html" class="gallery-item"><img src="https://images.unsplash.com/photo-1503454537195-1dcabb73ffb9?auto=format&fit=crop&w=400&q=80" alt="Фото"></a>
-                    <a href="gallery.html" class="gallery-item"><img src="https://images.unsplash.com/photo-1485546246426-74dc88dec4d9?auto=format&fit=crop&w=400&q=80" alt="Фото"></a>
-                    <a href="gallery.html" class="gallery-item more-link">
-                        <span>Смотреть<br>все фото</span>
+                     <a href="gallery.html" class="gallery-item"><img src="https://images.unsplash.com/photo-1502086223501-60051f87b8da?auto=format&fit=crop&w=400&q=80"></a>
+                     <a href="gallery.html" class="gallery-item"><img src="https://images.unsplash.com/photo-1516627145497-ae6968895b74?auto=format&fit=crop&w=400&q=80"></a>
+                     <a href="gallery.html" class="gallery-item"><img src="https://images.unsplash.com/photo-1472162072942-cd5147eb3902?auto=format&fit=crop&w=400&q=80"></a>
+                     <a href="gallery.html" class="gallery-item more-link">
+                        <span data-i18n="gallery_more">Смотреть<br>все фото</span>
                     </a>
                 </div>
             </div>
@@ -170,9 +214,9 @@
                 </div>
                 <div class="insta-card">
                     <div class="insta-latest-post">
-                        <img src="https://images.unsplash.com/photo-1519331379826-f95209603306?auto=format&fit=crop&w=600&q=80" alt="Instagram Post">
+                        <img src="https://images.unsplash.com/photo-1519331379826-f95209603306?auto=format&fit=crop&w=600&q=80">
                     </div>
-                    <a href="#" class="btn-insta">Подписаться</a>
+                    <a href="#" class="btn-insta" data-i18n="insta_sub">Подписаться</a>
                 </div>
             </div>
         </div>
@@ -183,37 +227,35 @@
             <div class="contact-new-wrapper">
                 <div class="map-visual">
                     <div class="map-frame">
-                        <img src="https://images.unsplash.com/photo-1524661135-423995f22d0b?auto=format&fit=crop&w=800&q=80" alt="Карта локации">
+                        <img src="https://images.unsplash.com/photo-1524661135-423995f22d0b?auto=format&fit=crop&w=800&q=80">
                         <div class="map-overlay-card">
-                            <h3>Наш кампус</h3>
-                            <p>г. Алматы</p>
+                            <h3 data-i18n="map_campus">Наш кампус</h3>
+                            <p data-i18n="map_city">г. Алматы</p>
                         </div>
                     </div>
                 </div>
-
                 <div class="contact-info-new">
-                    <span class="contact-tag">Контакты</span>
-                    <h2 class="contact-heading">Мы будем рады<br>встрече с вами!</h2>
-
+                    <span class="contact-tag" data-i18n="contact_tag">Контакты</span>
+                    <h2 class="contact-heading" data-i18n="contact_header">Мы будем рады<br>встрече с вами!</h2>
                     <div class="contact-list-new">
                         <div class="contact-row">
                             <div class="icon-circle icon-teal"><i class="fas fa-map-marker-alt"></i></div>
                             <div class="contact-text">
-                                <span class="label">Наш адрес</span>
-                                <p>ул. Солнечная, 12, Алматы</p>
+                                <span class="label" data-i18n="cont_addr_label">Наш адрес</span>
+                                <p data-i18n="cont_addr_val">ул. Солнечная, 12, Алматы</p>
                             </div>
                         </div>
                         <div class="contact-row">
                             <div class="icon-circle icon-orange"><i class="fas fa-phone-alt"></i></div>
                             <div class="contact-text">
-                                <span class="label">Позвоните нам</span>
+                                <span class="label" data-i18n="cont_call_label">Позвоните нам</span>
                                 <p>+7 (777) 123-45-67</p>
                             </div>
                         </div>
                         <div class="contact-row">
                             <div class="icon-circle icon-pink"><i class="fas fa-envelope"></i></div>
                             <div class="contact-text">
-                                <span class="label">Пишите нам</span>
+                                <span class="label" data-i18n="cont_email_label">Пишите нам</span>
                                 <p>hello@nurai-garden.kz</p>
                             </div>
                         </div>
@@ -225,10 +267,26 @@
 
     <footer>
         <div class="container footer-content">
-            <p>© 2026 Детский сад "NurAI". Все права защищены.</p>
+            <p>© 2026 <span data-i18n="footer_copy">Детский сад "NurAI". Все права защищены.</span></p>
         </div>
     </footer>
 
     <script src="script.js"></script>
+    <div id="news-modal" class="news-modal">
+        <div class="news-modal-content">
+            <span class="close-news">&times;</span>
+            <div class="news-modal-header">
+                <img id="modal-news-img" src="" alt="News Image">
+                <div class="news-modal-date">
+                    <span id="modal-date-day"></span>
+                    <span id="modal-date-month"></span>
+                </div>
+            </div>
+            <div class="news-modal-body">
+                <h2 id="modal-news-title"></h2>
+                <div id="modal-news-text"></div>
+            </div>
+        </div>
+    </div>
 </body>
 </html>

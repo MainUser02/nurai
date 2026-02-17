@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Аттестация - NurAI</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+
+    <header class="header">
+        <div class="container nav-container">
+            <a href="index.html" class="logo">
+                <img src="./logo_nurai.png" alt="NurAI Logo">
+                <span>NurAI</span>
+            </a>
+            
+            <nav class="navbar">
+                <ul class="nav-menu">
+                    <li><a href="index.html" class="nav-link" data-i18n="nav_home">Главная</a></li>
+                    <li><a href="index.html#about" class="nav-link" data-i18n="nav_about">О нас</a></li>
+                    <li><a href="gallery.html" class="nav-link" data-i18n="nav_gallery">Галерея</a></li>
+                    <li><a href="attestation.html" class="nav-link active" data-i18n="nav_attestation">Аттестация</a></li>
+                    <li><a href="index.html#contacts" class="nav-link btn-contact" data-i18n="nav_contact">Контакты</a></li>
+                    
+                    <div class="lang-switcher">
+                        <button class="lang-btn active" onclick="changeLanguage('ru')">RU</button>
+                        <button class="lang-btn" onclick="changeLanguage('kz')">KZ</button>
+                    </div>
+                </ul>
+                <div class="hamburger">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <section class="page-header">
+        <div class="container">
+            <h1 data-i18n="att_title">Аттестация</h1>
+            <p data-i18n="att_desc">Официальные документы и отчеты</p>
+        </div>
+    </section>
+
+    <section class="section doc-section">
+        <div class="container">
+            
+            <div class="year-block">
+                <h2 class="year-title"><i class="far fa-calendar-alt"></i> 2025 - 2026</h2>
+                <div class="doc-list">
+                    
+                    <div class="doc-item">
+                        <div class="doc-icon">
+                            <i class="fas fa-file-pdf"></i>
+                        </div>
+                        <div class="doc-info">
+                            <h4 data-i18n="doc_plan_25">План развития на 2025-2026 год</h4>
+                            <span class="doc-size">PDF, 2.4 MB</span>
+                        </div>
+                        <a href="#" class="btn-doc" target="_blank" data-i18n="btn_view">Смотреть</a>
+                    </div>
+
+                    <div class="doc-item">
+                        <div class="doc-icon">
+                            <i class="fas fa-file-pdf"></i>
+                        </div>
+                        <div class="doc-info">
+                            <h4 data-i18n="doc_report_25">Отчет о педагогической деятельности</h4>
+                            <span class="doc-size">PDF, 1.1 MB</span>
+                        </div>
+                        <a href="#" class="btn-doc" target="_blank" data-i18n="btn_view">Смотреть</a>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="year-block">
+                <h2 class="year-title"><i class="far fa-calendar-alt"></i> 2023 - 2024</h2>
+                <div class="doc-list">
+                    
+                    <div class="doc-item">
+                        <div class="doc-icon">
+                            <i class="fas fa-file-pdf"></i>
+                        </div>
+                        <div class="doc-info">
+                            <h4 data-i18n="doc_result_23">Итоги аттестации 2023</h4>
+                            <span class="doc-size">PDF, 3.5 MB</span>
+                        </div>
+                        <a href="#" class="btn-doc" target="_blank" data-i18n="btn_view">Смотреть</a>
+                    </div>
+
+                    <div class="doc-item">
+                        <div class="doc-icon">
+                            <i class="fas fa-file-pdf"></i>
+                        </div>
+                        <div class="doc-info">
+                            <h4 data-i18n="doc_finance_23">Финансовый отчет</h4>
+                            <span class="doc-size">PDF, 0.9 MB</span>
+                        </div>
+                        <a href="#" class="btn-doc" target="_blank" data-i18n="btn_view">Смотреть</a>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <footer>
+        <div class="container footer-content">
+            <p>© 2026 <span data-i18n="footer_copy">Детский сад "NurAI". Все права защищены.</span></p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

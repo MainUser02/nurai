@@ -138,7 +138,7 @@ img { max-width: 100%; display: block; }
 /* --- HERO (Слайдер + Солнце) --- */
 .hero {
     position: relative;
-    height: 650px;
+    height: 850px;
     overflow: hidden;
 }
 
@@ -304,12 +304,69 @@ img { max-width: 100%; display: block; }
 .about-image:hover img { border-radius: 50%; }
 
 /* --- СОТРУДНИКИ --- */
-.staff-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; }
-.staff-card { background: var(--bg-cream); padding: 30px; border-radius: 20px; text-align: center; transition: 0.3s; border: 1px solid #eee; }
-.staff-card:hover { transform: translateY(-10px); box-shadow: var(--shadow); }
-.avatar-wrapper img { width: 120px; height: 120px; border-radius: 50%; margin: 0 auto 15px; border: 4px solid var(--secondary-teal); object-fit: cover; }
-.staff-card h3 { margin-bottom: 5px; }
-.position { color: var(--primary-orange); font-weight: 700; }
+.staff-grid {
+    display: grid;
+    /* Жестко задаем 2 колонки равной ширины */
+    grid-template-columns: repeat(2, 1fr);
+    /* Отступы между колонками и рядами */
+    gap: 30px;
+    /* Центрируем сетку, если карточек меньше 4, и ограничиваем ширину */
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.staff-card {
+    background: var(--bg-cream);
+    padding: 30px;
+    border-radius: 20px;
+    text-align: center; /* Текст и фото будут по центру */
+    transition: 0.3s;
+    border: 1px solid #eee;
+    /* Flexbox для вертикального выравнивания контента внутри карточки */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.staff-card:hover {
+    transform: translateY(-10px);
+    box-shadow: var(--shadow);
+}
+
+.avatar-wrapper {
+    /* Дополнительное центрирование для обертки фото */
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin-bottom: 15px;
+}
+
+.avatar-wrapper img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    border: 4px solid var(--secondary-teal);
+    object-fit: scale-down;
+    background-color: #fff;
+}
+
+.staff-card h3 {
+    margin-bottom: 5px;
+    color: var(--text-dark);
+}
+
+.position {
+    color: var(--primary-orange);
+    font-weight: 700;
+}
+
+/* Адаптация для мобильных устройств */
+@media (max-width: 600px) {
+    .staff-grid {
+        /* На маленьких экранах возвращаем 1 колонку */
+        grid-template-columns: 1fr;
+    }
+}
 
 /* --- ПРЕДЛОЖЕНИЯ --- */
 .offer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px; padding-bottom: 150px; }
@@ -805,4 +862,187 @@ footer { background: var(--text-dark); color: white; text-align: center; padding
     color: var(--text-light);
     font-size: 1.1rem;
     line-height: 1.8;
+}
+
+/* --- СТРАНИЦА АТТЕСТАЦИИ --- */
+
+.doc-section {
+    background-color: var(--white);
+    min-height: 60vh; /* Чтобы футер не прилипал, если документов мало */
+}
+
+.year-block {
+    margin-bottom: 50px;
+}
+
+.year-title {
+    font-size: 1.8rem;
+    color: var(--secondary-teal); /* Бирюзовый для года */
+    margin-bottom: 25px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #eee;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.doc-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(400px, 1fr)); /* Адаптивная сетка */
+    gap: 20px;
+}
+
+.doc-item {
+    background: var(--bg-cream);
+    padding: 20px;
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    transition: 0.3s;
+    border: 1px solid transparent;
+}
+
+.doc-item:hover {
+    background: white;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+    border-color: var(--primary-orange);
+    transform: translateY(-3px);
+}
+
+.doc-icon {
+    width: 50px;
+    height: 50px;
+    background: #ffebee; /* Светло-красный фон для иконки PDF */
+    color: #e53935; /* Красный цвет PDF */
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    flex-shrink: 0;
+}
+
+.doc-info {
+    flex-grow: 1;
+}
+
+.doc-info h4 {
+    color: var(--text-dark);
+    font-size: 1.1rem;
+    margin-bottom: 5px;
+    line-height: 1.2;
+}
+
+.doc-size {
+    font-size: 0.85rem;
+    color: var(--text-light);
+}
+
+.btn-doc {
+    padding: 8px 15px;
+    border: 2px solid var(--primary-orange);
+    border-radius: 20px;
+    color: var(--primary-orange);
+    font-weight: 700;
+    font-size: 0.9rem;
+    transition: 0.3s;
+}
+
+.btn-doc:hover {
+    background: var(--primary-orange);
+    color: white;
+}
+
+/* Мобильная адаптация */
+@media (max-width: 600px) {
+    .doc-list {
+        grid-template-columns: 1fr; /* Одна колонка на телефоне */
+    }
+    
+    .doc-item {
+        flex-direction: column;
+        text-align: center;
+        padding: 25px;
+    }
+
+    .doc-info h4 {
+        margin-top: 10px;
+    }
+
+    .btn-doc {
+        width: 100%;
+        text-align: center;
+        margin-top: 10px;
+    }
+}
+
+/* --- ОБНОВЛЕННЫЙ БЛОК ИНСТАГРАМ (СЕТКА) --- */
+.insta-card {
+    background: white;
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: var(--shadow);
+    border: 1px solid #dbdbdb;
+    text-align: center;
+}
+
+.insta-profile-link p {
+    font-weight: 700;
+    color: var(--text-light);
+    margin-bottom: 15px;
+    font-size: 0.9rem;
+}
+
+/* Сетка 2x2 */
+.insta-feed-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* 2 колонки */
+    gap: 5px; /* Маленький отступ как в инсте */
+    margin-bottom: 20px;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.insta-post {
+    position: relative;
+    display: block;
+    width: 100%;
+    padding-bottom: 100%; /* Делает элемент квадратным */
+    overflow: hidden;
+}
+
+.insta-post img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+}
+
+/* Эффект наведения */
+.insta-hover {
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(0,0,0,0.3);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: 0.3s;
+}
+
+.insta-hover i {
+    color: white;
+    font-size: 1.5rem;
+}
+
+.insta-post:hover .insta-hover {
+    opacity: 1;
+}
+
+.insta-post:hover img {
+    transform: scale(1.1);
 }

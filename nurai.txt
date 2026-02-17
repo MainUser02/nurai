@@ -1,0 +1,3 @@
+https://srv-plesk05.ps.kz:8443/smb/web/view
+логин nadirova@mail.ru
+pass Nadirova@86

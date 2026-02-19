@@ -342,12 +342,11 @@ img { max-width: 100%; display: block; }
 }
 
 .avatar-wrapper img {
-    width: 120px;
-    height: 120px;
+    width: 180px;
+    height: 180px;
     border-radius: 50%;
     border: 4px solid var(--secondary-teal);
-    object-fit: scale-down;
-    background-color: #fff;
+    object-fit: contain;
 }
 
 .staff-card h3 {
